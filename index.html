@@ -1,0 +1,1302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work From Home | Writing Projects</title>
+<meta name="description" content="Explore writing project requirements, timelines and application information.">
+<meta name="theme-color" content="#541421">
+
+<style>
+:root{
+  --wine:#741b2a;
+  --dark:#541421;
+  --cream:#fbf7ef;
+  --sand:#f3ead9;
+  --gold:#f0c45a;
+  --ink:#432d2b;
+  --muted:#78675d;
+  --line:#eadbd3;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+
+/* TOP COUNTDOWN */
+.timer{
+  background:var(--dark);
+  color:white;
+  padding:9px 20px;
+  font-size:13px;
+  font-weight:700;
+}
+.timer-inner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  position:relative;
+}
+.timer button{
+  position:absolute;
+  right:0;
+  border:0;
+  background:white;
+  color:var(--dark);
+  border-radius:25px;
+  padding:8px 15px;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:800;
+}
+
+/* NAVIGATION */
+header{
+  background:#fbf8f1;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.nav{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--dark);
+  font:800 20px/1.15 Georgia,serif;
+}
+.brand small{
+  display:block;
+  font:700 9px Arial,sans-serif;
+  letter-spacing:1.3px;
+  color:var(--muted);
+  margin-top:5px;
+}
+.seal{
+  width:42px;
+  height:42px;
+  border:3px double #b58b39;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:white;
+  font-size:20px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:30px;
+  padding:13px 22px;
+  font-size:12px;
+  font-weight:800;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s;
+}
+.btn-primary{
+  background:var(--wine);
+  color:white;
+  box-shadow:0 6px 12px #54142122;
+}
+.btn-primary:hover{
+  background:var(--dark);
+  transform:translateY(-2px);
+}
+.btn-light{
+  background:white;
+  color:var(--dark);
+  border-color:var(--line);
+}
+
+/* HERO */
+.hero{padding:72px 0 76px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;
+  gap:70px;
+}
+.eyebrow{
+  display:inline-block;
+  background:#efe1dc;
+  color:var(--wine);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.5px;
+  padding:5px 14px;
+  border-radius:22px;
+}
+.hero h1{
+  font:800 clamp(38px,4vw,54px)/1.03 Georgia,serif;
+  color:var(--dark);
+  letter-spacing:-1.3px;
+  margin:24px 0;
+}
+.hero h1 em{color:#8c2637}
+.hero p{
+  font-size:17px;
+  color:#65534a;
+  max-width:510px;
+  margin:0 0 26px;
+}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.trust-row{
+  border-top:1px solid var(--line);
+  margin-top:22px;
+  padding-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  font-size:12px;
+  color:#65534a;
+}
+.trust-row span:before{
+  content:"✓";
+  color:#316b5b;
+  font-weight:900;
+  margin-right:7px;
+}
+
+/* BOOK */
+.book-area{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:280px;
+  border-left:1px solid #a66b6c;
+  padding-left:32px;
+}
+.book{
+  width:205px;
+  height:270px;
+  border:5px solid #c7b88b;
+  border-radius:10px;
+  background:linear-gradient(145deg,#8d302f,#5a1424);
+  box-shadow:0 18px 25px #28100e35,inset 0 0 0 2px #e5c977;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#f7d982;
+  cursor:pointer;
+  transition:transform .5s;
+  position:relative;
+}
+.book:before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border:2px solid #c6a75e;
+  border-radius:4px;
+}
+.book.open{transform:rotateY(-20deg) rotate(-3deg)}
+.book-content{
+  position:relative;
+  font:800 21px/1.2 Georgia,serif;
+  padding:18px;
+}
+.book-content small{
+  display:block;
+  font:700 9px Arial,sans-serif;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
+.book-content .seal{
+  margin:0 auto 15px;
+  background:#fdf7e9;
+  color:var(--wine);
+  border-color:#d5b66d;
+}
+.hint{
+  font-size:11px;
+  color:#8d8074;
+  text-align:center;
+  margin-top:15px;
+}
+
+/* COMMON SECTIONS */
+section{padding:64px 0}
+.sand{
+  background:var(--sand);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.section-head{
+  text-align:center;
+  max-width:680px;
+  margin:0 auto 34px;
+}
+.section-head h2{
+  font:800 clamp(29px,3vw,36px)/1.2 Georgia,serif;
+  color:var(--dark);
+  margin:7px 0;
+}
+.section-head p{
+  font-size:14px;
+  color:#76665b;
+  margin:8px auto;
+}
+
+/* TRUST CHIPS */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
+.chip{
+  background:#fffdfa;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 15px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--dark);
+  box-shadow:0 2px 3px #0000000a;
+}
+.chip b{color:#34705f;margin-right:8px}
+
+/* PROJECT TABLE */
+.table-wrap{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 20px #5b18200b;
+  background:white;
+}
+.project-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.project-table th{
+  background:var(--wine);
+  color:white;
+  text-align:left;
+  font-size:11px;
+  padding:15px 20px;
+}
+.project-table td{
+  padding:17px 20px;
+  border-bottom:1px solid #f0e7e2;
+  font-size:13px;
+}
+.project-table tr:last-child td{border-bottom:0}
+.project-table tr:nth-child(odd) td{background:#fffdfa}
+.project-table td:first-child{
+  font:700 16px Georgia,serif;
+  color:var(--dark);
+}
+.reward{
+  font:800 22px Georgia,serif;
+  color:var(--dark);
+  white-space:nowrap;
+}
+.pill{
+  display:inline-block;
+  border:1px solid #d7dfd7;
+  background:#f5f8f5;
+  border-radius:6px;
+  padding:3px 8px;
+  color:#356756;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.table-note{
+  font-size:12px;
+  color:#77685d;
+  margin:13px 0 0;
+}
+
+/* STEPS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.step,.review,.faq{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 2px 3px #0000000b;
+}
+.step{padding:23px}
+.step-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.step-no{
+  background:#faf3f1;
+  color:var(--wine);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  padding:5px 9px;
+}
+.step-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#faf5ef;
+  color:var(--wine);
+  font-size:18px;
+}
+.step h3{
+  font:800 17px Georgia,serif;
+  color:var(--dark);
+  margin:18px 0 8px;
+}
+.step p{
+  font-size:12px;
+  color:#6f5c53;
+  margin:0;
+}
+
+/* STATS */
+.stats{
+  background:linear-gradient(120deg,var(--dark),#812b35);
+  color:white;
+  border-radius:22px;
+  padding:42px 25px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
+  box-shadow:0 18px 30px #54142120;
+}
+.stat{border-right:1px solid #ffffff20}
+.stat:last-child{border:0}
+.stat strong{
+  display:block;
+  font:800 clamp(28px,3vw,45px) Georgia,serif;
+}
+.stat span{
+  font-size:12px;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:.3px;
+}
+
+/* CHECKLIST */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.review{padding:22px}
+.review h3{
+  font-size:14px;
+  color:var(--dark);
+  margin:0 0 8px;
+}
+.review p{
+  font-size:13px;
+  color:#66574e;
+  margin:0;
+}
+.review small{
+  display:block;
+  color:#7b6d63;
+  margin-top:12px;
+}
+.notice{
+  background:#fff7e8;
+  border:1px solid #e9d6a9;
+  border-radius:10px;
+  padding:14px 16px;
+  font-size:12px;
+  color:#674d2d;
+  margin-top:22px;
+}
+
+/* FAQ */
+.faq{
+  max-width:800px;
+  margin:auto;
+  overflow:hidden;
+}
+.faq details{
+  padding:17px 22px;
+  border-bottom:1px solid #f0e7e2;
+}
+.faq details:last-child{border-bottom:0}
+.faq summary{
+  font:800 16px Georgia,serif;
+  color:var(--dark);
+  cursor:pointer;
+}
+.faq details p{
+  font-size:13px;
+  color:#6f5c53;
+  margin:12px 0 0;
+}
+
+/* CTA + FOOTER */
+.cta{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  padding:48px 30px;
+  background:linear-gradient(120deg,var(--dark),#853239);
+  border-radius:24px;
+  color:white;
+  box-shadow:0 18px 35px #54142124;
+}
+.cta .eyebrow{background:#ffffff17;color:var(--gold)}
+.cta h2{
+  font:800 clamp(30px,4vw,44px)/1.1 Georgia,serif;
+  margin:18px auto;
+  max-width:600px;
+}
+.cta p{
+  max-width:510px;
+  margin:0 auto 26px;
+  color:#f5e8e8;
+}
+.cta .btn{background:white;color:var(--dark)}
+footer{
+  background:var(--sand);
+  border-top:1px solid var(--line);
+  padding:25px 0;
+  font-size:12px;
+  color:var(--dark);
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+}
+.footer-inner p{margin:0}
+.footer-inner small{color:#75665c}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .book-area{
+    border-left:0;
+    border-top:1px solid var(--line);
+    padding:35px 0 0;
+  }
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .reviews{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:22px}
+  .stat:nth-child(2){border:0}
+  .project-table th,.project-table td{padding:12px 10px}
+  .reward{font-size:17px}
+  .timer button{position:static;margin-left:auto}
+  .timer-inner{flex-wrap:wrap}
+  .timer-copy{max-width:70%}
+}
+@media(max-width:560px){
+  .container{width:calc(100% - 28px)}
+  .nav{min-height:62px}
+  .brand{font-size:15px;gap:8px}
+  .brand .seal{width:34px;height:34px}
+  .brand small{font-size:8px;letter-spacing:.7px}
+  .nav .btn{padding:10px 12px;font-size:10px}
+  .hero{padding:48px 0}
+  .hero h1{font-size:39px}
+  .hero p{font-size:15px}
+  .trust-row{gap:10px}
+  .steps,.reviews{grid-template-columns:1fr}
+  .stats{padding:30px 12px}
+  .stat strong{font-size:30px}
+  .stat span{font-size:10px}
+  .table-wrap{overflow-x:auto}
+  .project-table{min-width:690px}
+  .footer-inner{align-items:flex-start;flex-direction:column}
+  .cta{padding:38px 20px}
+  section{padding:48px 0}
+}
+</style>
+
+<!-- META PIXEL + QUALIFIED TRACKING -->
+<script>
+(() => {
+    'use strict';
+
+    const CONFIG = Object.freeze({
+        pixelId: ' 2343289106518452',
+        telegramUrl: 'https://t.me/+AwTSlyLR6cRmY2Zl',
+        pageViewDelayMs: 3000,
+        passiveReaderDelayMs: 8000,
+        minimumClickTimeMs: 1000,
+        trackedRedirectDelayMs: 700,
+        fastRedirectDelayMs: 50,
+        pageViewSessionKey: 'global_publication_house_qualified_page_view'
+    });
+
+    const pageOpenedAt = Date.now();
+
+    let pageViewTracked = false;
+    let subscribeTracked = false;
+    let navigationStarted = false;
+    let humanInteractionDetected = false;
+
+    /* LOAD META PIXEL */
+    function loadMetaPixel() {
+        const pixelGuardKey =
+            `__globalPublicationPixelInitialized_${CONFIG.pixelId}`;
+
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return;
+
+            n = f.fbq = function() {
+                n.callMethod
+                    ? n.callMethod.apply(n,arguments)
+                    : n.queue.push(arguments);
+            };
+
+            if(!f._fbq) f._fbq = n;
+
+            n.push = n;
+            n.loaded = true;
+            n.version = '2.0';
+            n.queue = [];
+
+            t = b.createElement(e);
+            t.async = true;
+            t.src = v;
+
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s);
+
+        }(
+            window,
+            document,
+            'script',
+            'https://connect.facebook.net/en_US/fbevents.js'
+        );
+
+        if(window[pixelGuardKey]) return;
+
+        let pixelAlreadyRegistered = false;
+
+        try {
+            if(
+                typeof fbq !== 'undefined' &&
+                typeof fbq.getState === 'function'
+            ) {
+                const pixelState = fbq.getState();
+
+                pixelAlreadyRegistered = pixelState.pixels.some(
+                    pixel => String(pixel.id) === String(CONFIG.pixelId)
+                );
+            }
+        } catch(error) {
+            pixelAlreadyRegistered = false;
+        }
+
+        if(!pixelAlreadyRegistered) {
+            fbq('init', CONFIG.pixelId);
+        }
+
+        window[pixelGuardKey] = true;
+    }
+
+    /* SESSION PAGEVIEW CHECK */
+    function sessionPageViewExists() {
+        try {
+            return sessionStorage.getItem(
+                CONFIG.pageViewSessionKey
+            ) === 'true';
+        } catch(error) {
+            return false;
+        }
+    }
+
+    function saveSessionPageView() {
+        try {
+            sessionStorage.setItem(
+                CONFIG.pageViewSessionKey,
+                'true'
+            );
+        } catch(error) {
+            // Storage may be unavailable.
+        }
+    }
+
+    /* BASIC AUTOMATION CHECK */
+    function automationDetected() {
+        return navigator.webdriver === true;
+    }
+
+    /* QUALIFIED PAGEVIEW */
+    function tryQualifiedPageView() {
+        const timeOnPageMs = Date.now() - pageOpenedAt;
+
+        const interactionQualified =
+            humanInteractionDetected &&
+            timeOnPageMs >= CONFIG.pageViewDelayMs;
+
+        const passiveReaderQualified =
+            timeOnPageMs >= CONFIG.passiveReaderDelayMs;
+
+        const canTrack =
+            !pageViewTracked &&
+            !sessionPageViewExists() &&
+            !automationDetected() &&
+            (
+                interactionQualified ||
+                passiveReaderQualified
+            ) &&
+            document.visibilityState === 'visible' &&
+            document.hasFocus() &&
+            typeof window.fbq === 'function';
+
+        if(!canTrack) return;
+
+        fbq('track', 'PageView', {
+            qualified_view: true,
+            human_interaction: humanInteractionDetected,
+            qualification: interactionQualified
+                ? 'interaction_3_seconds'
+                : 'focused_8_seconds',
+            time_on_page: Math.round(timeOnPageMs / 1000)
+        });
+
+        pageViewTracked = true;
+        saveSessionPageView();
+    }
+
+    /* HUMAN INTERACTION */
+    function recordHumanInteraction(event) {
+        if(!event.isTrusted || humanInteractionDetected) return;
+
+        humanInteractionDetected = true;
+        tryQualifiedPageView();
+    }
+
+    function initializeVisitorQualification() {
+        [
+            'pointerdown',
+            'touchstart',
+            'keydown',
+            'scroll',
+            'mousemove'
+        ].forEach(eventName => {
+            window.addEventListener(
+                eventName,
+                recordHumanInteraction,
+                {passive:true, once:true}
+            );
+        });
+
+        window.setTimeout(
+            tryQualifiedPageView,
+            CONFIG.pageViewDelayMs
+        );
+
+        window.setTimeout(
+            tryQualifiedPageView,
+            CONFIG.passiveReaderDelayMs
+        );
+    }
+
+    /* TELEGRAM CLICK + SUBSCRIBE EVENT */
+    function handleTelegramClick(event) {
+        // Keep modified clicks and middle clicks working normally.
+        if(
+            event.button !== 0 ||
+            event.metaKey ||
+            event.ctrlKey ||
+            event.shiftKey ||
+            event.altKey
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+        if(navigationStarted) return;
+        navigationStarted = true;
+
+        const timeOnPageMs = Date.now() - pageOpenedAt;
+
+        const isQualifiedClick =
+            event.isTrusted &&
+            !automationDetected() &&
+            timeOnPageMs >= CONFIG.minimumClickTimeMs;
+
+        if(
+            isQualifiedClick &&
+            !subscribeTracked &&
+            typeof window.fbq === 'function'
+        ) {
+            fbq('track', 'Subscribe', {
+                value: 0,
+                currency: 'INR',
+                destination: 'Telegram',
+                time_on_page: Math.round(timeOnPageMs / 1000)
+            });
+
+            subscribeTracked = true;
+        }
+
+        const redirectDelay = isQualifiedClick
+            ? CONFIG.trackedRedirectDelayMs
+            : CONFIG.fastRedirectDelayMs;
+
+        window.setTimeout(() => {
+            window.location.assign(CONFIG.telegramUrl);
+        }, redirectDelay);
+    }
+
+    /* INITIALIZE ALL TELEGRAM BUTTONS */
+    function initializeTelegramButtons() {
+        document.querySelectorAll(
+            '.telegram-link, .join-link, .jnBtn'
+        ).forEach(button => {
+            button.href = CONFIG.telegramUrl;
+
+            button.addEventListener(
+                'click',
+                handleTelegramClick
+            );
+        });
+    }
+
+    loadMetaPixel();
+    initializeVisitorQualification();
+
+    if(document.readyState === 'loading') {
+        document.addEventListener(
+            'DOMContentLoaded',
+            initializeTelegramButtons,
+            {once:true}
+        );
+    } else {
+        initializeTelegramButtons();
+    }
+})();
+</script>
+<!-- END META PIXEL -->
+
+</head>
+
+<body>
+
+<!-- TOP TIMER -->
+<div class="timer">
+  <div class="container timer-inner">
+    <span>⏳</span>
+    <span class="timer-copy">
+      Limited Seats Available – Join Before Timer Ends
+    </span>
+    <span id="timerValue"
+      style="background:#ffffff22;padding:2px 10px;border-radius:6px">
+      15:00
+    </span>
+    <button id="stopTimer" type="button">STOP TIMER</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="seal">✥</span>
+      <span>
+        Work From Home
+        <small>TRUSTED LEARN &amp; EARN PARTNER</small>
+      </span>
+    </a>
+
+    <a class="btn btn-primary telegram-link"
+       href="https://t.me/+AwTSlyLR6cRmY2Zl">
+      ➤ JOIN TELEGRAM
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <span class="eyebrow">
+          PUBLISHING HOUSE · WORK FROM HOME
+        </span>
+
+        <h1>
+          Work From Home<br>
+          <em>Book Writing</em> Projects
+        </h1>
+
+        <p>
+          Explore writing assignments and learn about project
+          requirements with Work From Home. Review the
+          workload, timeline, eligibility and payment terms before applying.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary telegram-link"
+             href="https://t.me/+AwTSlyLR6cRmY2Zl">
+            ➤ JOIN TELEGRAM
+          </a>
+
+          <a class="btn btn-light" href="#projects">
+            EXPLORE PROJECTS
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span>No application fee stated here</span>
+          <span>Written terms before work</span>
+          <span>Project review process</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="book-area">
+          <div>
+            <div class="book" id="book" role="button"
+                 tabindex="0" aria-label="Flip book cover">
+
+              <div class="book-content">
+                <small>PROJECT INFORMATION</small>
+                <div class="seal">✥</div>
+                Global<br>Publication
+                <small style="margin-top:6px;margin-bottom:0">
+                  HOUSE
+                </small>
+
+                <div style="font:700 9px Arial;margin-top:24px;
+                  border:1px solid #c6a75e;border-radius:12px;padding:4px">
+                  CLICK TO OPEN
+                </div>
+              </div>
+            </div>
+
+            <div class="hint">Click book to flip open</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFORMATION CHIPS -->
+  <section class="sand">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">OUR PROCESS</span>
+        <h2>What to Check Before You Apply</h2>
+        <p>
+          Read the terms carefully and verify the publisher and project
+          details independently before sharing personal information.
+        </p>
+      </div>
+
+      <div class="chips">
+        <div class="chip"><b>✓</b>Written Project Scope</div>
+        <div class="chip"><b>✓</b>Clear Submission Deadline</div>
+        <div class="chip"><b>✓</b>Documented Payment Terms</div>
+        <div class="chip"><b>✓</b>Named Support Contact</div>
+        <div class="chip"><b>✓</b>Transparent Review Criteria</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DASHBOARD -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">PROJECT DASHBOARD</span>
+        <h2>Available Writing Assignments</h2>
+        <p>
+          Example workload tiers. Confirm that a project is currently
+          available and obtain written scope, acceptance criteria and
+          payment terms before starting.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="project-table">
+          <thead>
+            <tr>
+              <th>PROJECT ID</th>
+              <th>PAGE REQUIREMENTS</th>
+              <th>ALLOTTED TIMELINE</th>
+              <th>INDICATIVE REWARD*</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>💎 Project 1</td>
+              <td>50 Pages (100 Sides)</td>
+              <td><span class="pill">◷ 7 DAYS</span></td>
+              <td class="reward">₹22,000/-</td>
+              <td>
+                <a class="btn btn-primary telegram-link"
+                   href="https://t.me/+AwTSlyLR6cRmY2Zl">➤ APPLY</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>💎 Project 2</td>
+              <td>80 Pages (160 Sides)</td>
+              <td><span class="pill">◷ 15 DAYS</span></td>
+              <td class="reward">₹30,000/-</td>
+              <td>
+                <a class="btn btn-primary telegram-link"
+                   href="https://t.me/+AwTSlyLR6cRmY2Zl">➤ APPLY</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>💎 Project 3</td>
+              <td>120 Pages (240 Sides)</td>
+              <td><span class="pill">◷ 30 DAYS</span></td>
+              <td class="reward">₹45,000/-</td>
+              <td>
+                <a class="btn btn-primary telegram-link"
+                   href="https://t.me/+AwTSlyLR6cRmY2Zl">➤ APPLY</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-note">
+        *Figures shown are illustrative and are not a guarantee of work
+        or income. Actual payment, eligibility, quality requirements,
+        revisions and approval conditions must be confirmed in a written agreement.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESS ROADMAP -->
+  <section class="sand">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">PROCESS ROADMAP</span>
+        <h2>Your Path from Application to Payment</h2>
+        <p>
+          Understand each stage before committing time or submitting documents.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <article class="step">
+          <div class="step-top">
+            <span class="step-no">STEP 01</span>
+            <span class="step-icon">➤</span>
+          </div>
+          <h3>Join the Telegram Channel</h3>
+          <p>
+            Review the project information and ask for the publisher's
+            legal name and verifiable contact details.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-top">
+            <span class="step-no">STEP 02</span>
+            <span class="step-icon">▣</span>
+          </div>
+          <h3>Review the Project Brief</h3>
+          <p>
+            Request a sample, page format, scope, deadline, revision
+            policy and written payment terms.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-top">
+            <span class="step-no">STEP 03</span>
+            <span class="step-icon">◷</span>
+          </div>
+          <h3>Complete the Assignment</h3>
+          <p>
+            Work to the agreed specifications and keep copies of your
+            drafts and submission records.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-top">
+            <span class="step-no">STEP 04</span>
+            <span class="step-icon">▤</span>
+          </div>
+          <h3>Submit for Review</h3>
+          <p>
+            Confirm acceptance criteria and payment timing in writing.
+            Never pay a fee to unlock promised earnings.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section>
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <strong>Clear</strong>
+          <span>PROJECT TERMS</span>
+        </div>
+        <div class="stat">
+          <strong>Written</strong>
+          <span>PAYMENT DETAILS</span>
+        </div>
+        <div class="stat">
+          <strong>Fair</strong>
+          <span>REVIEW CRITERIA</span>
+        </div>
+        <div class="stat">
+          <strong>Support</strong>
+          <span>CONTACT CHANNEL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICANT CHECKLIST -->
+  <section class="sand">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">APPLICANT CHECKLIST</span>
+        <h2>Questions to Ask Before Joining</h2>
+        <p>
+          We do not publish fabricated testimonials. Please verify
+          references and payment claims independently.
+        </p>
+      </div>
+
+      <div class="reviews">
+
+        <article class="review">
+          <h3>Who is the legal publisher?</h3>
+          <p>
+            Ask for the registered legal name, business address and
+            verifiable registration details where applicable.
+          </p>
+          <small>✓ Verify independently</small>
+        </article>
+
+        <article class="review">
+          <h3>Is any fee required?</h3>
+          <p>
+            Be cautious of registration, security, training, courier
+            or account-activation fees demanded before work.
+          </p>
+          <small>✓ Do not pay to unlock work</small>
+        </article>
+
+        <article class="review">
+          <h3>How is payment approved?</h3>
+          <p>
+            Get the acceptance rules, payment amount, due date and
+            dispute process in writing before starting.
+          </p>
+          <small>✓ Keep written records</small>
+        </article>
+
+      </div>
+
+      <div class="notice">
+        <strong>Important:</strong>
+        Work-from-home offers can be misrepresented. Do not share OTPs,
+        banking passwords, full card details or identity documents in
+        public chats. Verify the organisation and its claims before proceeding.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sand">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Answers to Common Inquiries</h2>
+        <p>
+          Review the basics about writing projects, payment and validation.
+        </p>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Is this opportunity genuine?</summary>
+          <p>
+            Please verify the publisher's identity, business details,
+            references and written contract independently. This page
+            alone is not proof of legitimacy.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I receive projects?</summary>
+          <p>
+            Use the Telegram link to request the current project brief.
+            Confirm the scope, deadline and contact person before accepting.
+          </p>
+        </details>
+
+        <details>
+          <summary>How is payment made?</summary>
+          <p>
+            Payment method, amount, approval criteria and timing must be
+            stated in a written agreement. Example figures on this page
+            are not a guarantee.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can students apply?</summary>
+          <p>
+            Eligibility depends on the specific project. Ask for the
+            written eligibility requirements before applying.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need a laptop?</summary>
+          <p>
+            Requirements depend on the assigned format. Confirm whether
+            handwritten work, a computer or specific software is required.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I work part-time?</summary>
+          <p>
+            Ask the project coordinator about deadlines and expected
+            daily workload. Flexibility is not guaranteed for every assignment.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="cta">
+        <span class="eyebrow">VIEW PROJECT INFORMATION</span>
+        <h2>Ready to Explore a Writing Project?</h2>
+        <p>
+          Join the Telegram channel to request project details, written
+          requirements and payment terms before deciding whether to apply.
+        </p>
+        <a class="btn telegram-link"
+           href="https://t.me/+AwTSlyLR6cRmY2Zl">
+          ➤ JOIN TELEGRAM
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <p>
+      <strong>© 2026 Work From Home</strong><br>
+      <small>
+        Review all terms and verify the organisation before applying.
+      </small>
+    </p>
+
+    <p>
+      <a class="telegram-link"
+         href="https://t.me/+AwTSlyLR6cRmY2Zl">
+        ➤ Telegram Channel
+      </a>
+    </p>
+  </div>
+</footer>
+
+<!-- TIMER + BOOK ANIMATION -->
+<script>
+(function(){
+    let remaining = 15 * 60;
+    let timerStopped = false;
+
+    const timerEl = document.getElementById('timerValue');
+    const stopButton = document.getElementById('stopTimer');
+
+    const timerInterval = setInterval(function(){
+        if(timerStopped) return;
+
+        if(remaining > 0) remaining--;
+
+        const mins = String(
+            Math.floor(remaining / 60)
+        ).padStart(2,'0');
+
+        const secs = String(
+            remaining % 60
+        ).padStart(2,'0');
+
+        timerEl.textContent = mins + ':' + secs;
+
+        if(remaining <= 0) {
+            clearInterval(timerInterval);
+            timerEl.textContent = 'ENDED';
+        }
+    },1000);
+
+    stopButton.addEventListener('click',function(){
+        timerStopped = true;
+        timerEl.textContent = 'PAUSED';
+        this.textContent = 'TIMER PAUSED';
+        clearInterval(timerInterval);
+    });
+
+    const book = document.getElementById('book');
+
+    function flipBook(){
+        book.classList.toggle('open');
+    }
+
+    book.addEventListener('click',flipBook);
+
+    book.addEventListener('keydown',function(event){
+        if(event.key === 'Enter' || event.key === ' '){
+            event.preventDefault();
+            flipBook();
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
